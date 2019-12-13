@@ -21,6 +21,8 @@ contract PlaneOwnership is PlaneFactory, ERC721 {
   }
 
   function _transfer(address _from, address _to, uint256 _planeId) private {
+    require(_from != address(0),"Adrresse invalide");
+    require(_to != address(0),"Adrresse invalide");
     ownerPlaneCount[_to] = ownerPlaneCount[_to].add(1);
     ownerPlaneCount[msg.sender] = ownerPlaneCount[msg.sender].sub(1);
     planeToOwner[_planeId] = _to;

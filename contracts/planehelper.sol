@@ -21,6 +21,7 @@ contract PlaneHelper is PlaneFactory{
   }
 
   function levelUp(uint _planeId) external payable {
+    require(msg.sender != address(0),"Adrresse invalide");
     require(msg.value == levelUpFee,"Vous n'avez pas assez de fee");
     planes[_planeId].level = planes[_planeId].level.add(1);
   }
