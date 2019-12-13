@@ -1,5 +1,4 @@
-# Defi721
-# Crypto Plane
+# Defi721 Crypto Plane
 
 Crypto Plane, un battle card entre avion .
 
