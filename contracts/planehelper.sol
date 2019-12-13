@@ -1,8 +1,9 @@
 pragma solidity ^0.5.11;
 
 import "./planefactory.sol";
+import "./ownable.sol";
 
-contract PlaneHelper{
+contract PlaneHelper is PlaneFactory{
     uint levelUpFee = 0.001 ether;
 
   modifier aboveLevel(uint _level, uint _planeId) {
@@ -23,7 +24,7 @@ contract PlaneHelper{
     planes[_planeId].level = planes[_planeId].level.add(1);
   }
 
-  function changeName(uint _planeId, string memory _newName) external aboveLevel(2, _planeId) ownerOnlyOf(_planeId) {
+  function changeName(uint _planeId, string _newName) external aboveLevel(2, _planeId) ownerOnlyOf(_planeId) {
     planes[_planeId].name = _newName;
   }
 
