@@ -5,6 +5,7 @@ import "./ownable.sol";
 
 contract PlaneHelper is PlaneFactory{
     uint levelUpFee = 0.001 ether;
+    //uint balance;
 
   modifier aboveLevel(uint _level, uint _planeId) {
     require(planes[_planeId].level >= _level, "Votre niveau n'est pas suffisant");
@@ -24,7 +25,7 @@ contract PlaneHelper is PlaneFactory{
     planes[_planeId].level = planes[_planeId].level.add(1);
   }
 
-  function changeName(uint _planeId, string _newName) external aboveLevel(2, _planeId) ownerOnlyOf(_planeId) {
+  function changeName(uint _planeId, string memory _newName) public aboveLevel(2, _planeId) ownerOnlyOf(_planeId) {
     planes[_planeId].name = _newName;
   }
 
