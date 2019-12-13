@@ -13,7 +13,7 @@ contract PlaneHelper is PlaneFactory{
   }
 
   function withdraw(address payable _fund) external onlyOwner {
-    owner.transfer(_balance);
+    _fund.transfer(_balance);
   }
 
   function setLevelUpFee(uint _fee) external onlyOwner {

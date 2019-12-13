@@ -7,7 +7,7 @@ import "./context.sol";
  * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
-  address payable public owner ;
+  address public owner ;
 
   event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
