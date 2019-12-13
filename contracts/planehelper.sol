@@ -24,7 +24,7 @@ contract PlaneHelper is PlaneFactory{
     planes[_planeId].level = planes[_planeId].level.add(1);
   }
 
-  function changeName(uint _planeId, string _newName) external aboveLevel(2, _planeId) ownerOnlyOf(_planeId) {
+  function changeName(uint _planeId, string memory _newName) public aboveLevel(2, _planeId) ownerOnlyOf(_planeId) {
     planes[_planeId].name = _newName;
   }
 
