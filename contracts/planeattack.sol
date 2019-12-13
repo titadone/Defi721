@@ -10,7 +10,7 @@ contract PlaneAttack is PlaneFactory, PlaneFuel{
 
   function randMod(uint _modulus) internal returns(uint) {
     randNonce++;
-    return uint(keccak256(now, msg.sender, abi.encodePacked(randNnce))) % _modulus;
+    return uint(keccak256(abi.encodePacked(now,msg.sender,randNonce))) % _modulus;
   }
 
   function attack(uint _planeId, uint _targetId) external ownerOnlyOf(_planeId) {
