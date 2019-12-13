@@ -5,15 +5,15 @@ import "./ownable.sol";
 
 contract PlaneHelper is PlaneFactory{
     uint levelUpFee = 0.001 ether;
-    //uint balance;
+    uint private _balance;
 
   modifier aboveLevel(uint _level, uint _planeId) {
     require(planes[_planeId].level >= _level, "Votre niveau n'est pas suffisant");
     _;
   }
 
-  function withdraw() external onlyOwner {
-    owner.transfer(this.balance);
+  function withdraw(address payable _fund) external onlyOwner {
+    owner.transfer(_balance);
   }
 
   function setLevelUpFee(uint _fee) external onlyOwner {
@@ -21,7 +21,7 @@ contract PlaneHelper is PlaneFactory{
   }
 
   function levelUp(uint _planeId) external payable {
-    require(msg.value == levelUpFee,"Vous n'avez pas assez de fée");
+    require(msg.value == levelUpFee,"Vous n'avez pas assez de fee");
     planes[_planeId].level = planes[_planeId].level.add(1);
   }
 
