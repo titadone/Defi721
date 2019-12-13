@@ -4,13 +4,14 @@ const factory = artifacts.require('PlaneFactory');
 
 contract(factory, function (accounts) {
   const owner = accounts[0];
-  const recipient = accounts[1];
+  
 
   beforeEach(async function () {
     this.factoryInstance = await factory.new({from: owner});
+    this.factoryInstance.createRandomPlane.call(owner);
   });
 
-  it("génère un avion", async function() {
-    expect(await this.factoryInstance.createRandomPlane.call(owner).to.be.bignumber.equal(new BN('1')));
+  it("génère un avion a un owner", async function() {
+    expect(await this.factoryInstance.ownerPlaneCount[owner].to.be.bignumber.equal(new BN('1')));
   });
 })

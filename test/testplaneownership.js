@@ -10,6 +10,7 @@ contract('ERC721', function(accounts) {
 
       beforeEach(async function() {
         this.ERC721Instance = await ERC721.new({from: owner});
+        
       });
 
       it("propriétaire de zéro avions", async function() {

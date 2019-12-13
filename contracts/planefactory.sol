@@ -36,6 +36,10 @@ contract PlaneFactory is Ownable {
     emit NewPlane(id, _name, _model);
   }
 
+  function getPlaneCount(address _user) returns (uint count){
+    
+  }
+
   function _generateRandomModel(string memory _str) private view returns (uint) {
     uint rand = uint(keccak256(abi.encodePacked(_str)));
     return rand % modelModulus;

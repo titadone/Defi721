@@ -11,7 +11,7 @@ contract PlaneFuel is PlaneFactory {
     }
 
     function _isReady(Plane storage _plane) internal view returns (bool) {
-      return (_plane.readyTimeFuel <= block.timestamp);
+      return (_plane.readyTimeFuel >= block.timestamp);
     }
 
     function refuel(uint _planeId)public payable{

@@ -4,8 +4,8 @@ const fuel = artifacts.require('PlaneFuel');
 
 contract(fuel,function(accounts) {
   const owner = accounts[0];
-  const recipient = accounts[1];
-  const bool = "true";
+  //const recipient = accounts[1];
+  //const bool = "true";
 
   beforeEach(async function () {
     this.fuelInstance = await fuel.new({from: owner});
