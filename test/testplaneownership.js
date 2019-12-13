@@ -17,6 +17,6 @@ contract('ERC721', function(accounts) {
       });
 
       it("", async function() {
-        expect(await this.ERC721Instance.ownerOf.call(tokenId)).to.be.bignumber.equal(new BN('0'));
+        expect(await this.ERC721Instance.ownerOf.call(planeId)).to.be.bignumber.equal(new BN('0'));
       });
   })
