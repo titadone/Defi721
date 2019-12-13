@@ -1,0 +1,40 @@
+{
+  "name": "defi721",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/titadone/Defi721.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/titadone/Defi721/issues"
+  },
+  "dependencies": {
+    "node": "^12.13.0",
+    "sha3": "^2.0.7",
+    "truffle": "^5.0.44"
+  },
+  "config": {
+    "ganache": {
+      "networkId": 5777,
+      "gas_price": 20000000000,
+      "gasLimit": 6721975
+    }
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^2.4.0",
+    "@openzeppelin/test-helpers": "^0.5.3",
+    "concurrently": "^5.0.0",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "homepage": "https://github.com/titadone/Defi721#readme"
+}

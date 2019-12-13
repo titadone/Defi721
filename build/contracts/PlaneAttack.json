@@ -1,0 +1,2937 @@
+{
+  "contractName": "PlaneAttack",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "planeId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "model",
+          "type": "uint256"
+        }
+      ],
+      "name": "NewPlane",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        }
+      ],
+      "name": "createRandomPlane",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "planeToOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "planes",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "model",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint16",
+          "name": "level",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint32",
+          "name": "readyTimeFuel",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint16",
+          "name": "fightwinCount",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "fightlossCount",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "fightCount",
+          "type": "uint16"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_planeId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_targetId",
+          "type": "uint256"
+        }
+      ],
+      "name": "attack",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"planeId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"model\",\"type\":\"uint256\"}],\"name\":\"NewPlane\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_planeId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_targetId\",\"type\":\"uint256\"}],\"name\":\"attack\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"createRandomPlane\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"planeToOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"planes\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"model\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"level\",\"type\":\"uint16\"},{\"internalType\":\"uint32\",\"name\":\"readyTimeFuel\",\"type\":\"uint32\"},{\"internalType\":\"uint16\",\"name\":\"fightwinCount\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"fightlossCount\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"fightCount\",\"type\":\"uint16\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/bloumy/Desktop/Defi721/contracts/planeattack.sol\":\"PlaneAttack\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/bloumy/Desktop/Defi721/contracts/context.sol\":{\"keccak256\":\"0xa5ce23dc71caa76caf782712dc8fef8dd2390c277f71e286474e9894d6ece97f\",\"urls\":[\"bzz-raw://cb14fd3bdc804349f070f0a372a2b6819bfe6e1b186080bb4850a1e1d024a16f\",\"dweb:/ipfs/Qmcp5Nhsq3PRRgXQYeqY41FMY1G2YbYC4JCWxFrst24MsC\"]},\"/Users/bloumy/Desktop/Defi721/contracts/ownable.sol\":{\"keccak256\":\"0xf1539c2bcb3996a3945148dcfe07e785e795806da4bd41c354ebd03f6b8524cc\",\"urls\":[\"bzz-raw://ef7bf2b1e1227a1dd110d80b5e50ec5f322c54906c8cafcff45e415d27803e2b\",\"dweb:/ipfs/QmcdhSJohwuHtdqL2YNMbxzj2W2LzAy5NejYnxASucdEEN\"]},\"/Users/bloumy/Desktop/Defi721/contracts/planeattack.sol\":{\"keccak256\":\"0x77ecccf98265a7d2040b7bcc172f0e259df8c6c3ed7c725f22b4ba3db771b9f4\",\"urls\":[\"bzz-raw://fd85193c3fd2b35bee41b48cf11d0a0dea3f7f62d6cefa380de1428005784718\",\"dweb:/ipfs/QmUoWvK5UGMjDcHy37qsytdbwc3i2D55tca77nFwcchu94\"]},\"/Users/bloumy/Desktop/Defi721/contracts/planefactory.sol\":{\"keccak256\":\"0xf4fef5dae103b888215b503f9e1b0b2890e4ab55319741db7b9117c442c4e9d6\",\"urls\":[\"bzz-raw://1f52545f3d918952057a3ccdabef3f43096be6fbdef2bc36ae940f9e7d9d22ec\",\"dweb:/ipfs/QmV17F84Qz4cRHMSu6qk61U4iKMLqqVx6g6wBJU8bPKf9B\"]},\"/Users/bloumy/Desktop/Defi721/contracts/planefuel.sol\":{\"keccak256\":\"0xefb6c23742fba3040dd4b04080062095105d181410376f2cb25912ff7abe59a2\",\"urls\":[\"bzz-raw://ff305917eb20463770560db32df26e212b7eba29547c93deb53d1eb82ec6cd32\",\"dweb:/ipfs/QmRstt5PWMZispVKWB4jSva6snEhnAJnQigJGUQfsrhpj5\"]},\"/Users/bloumy/Desktop/Defi721/contracts/safemath.sol\":{\"keccak256\":\"0xf7b92bebad6725d1c2009e19b920c2c212ecb9d9918820173fc3e7fde2a18a76\",\"urls\":[\"bzz-raw://74625b7f940a50e0b56de6a5809235cfb458143569e402294c2a53ad39645974\",\"dweb:/ipfs/QmbZ1JBqrJqxTv7tpwo3gD4Cj7Gbm1EpZMygSkV8rHNZ6a\"]}},\"version\":1}",
+  "bytecode": "0x60806040526010600155600154600a0a600255620151806003556000600755603c600855336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550611075806100726000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80634fbfd07f146100675780637c98309a146101645780638da5cb5b1461021f5780639f4583d214610269578063e1fa7638146102d7578063f2fde38b1461030f575b600080fd5b6100936004803603602081101561007d57600080fd5b8101908080359060200190929190505050610353565b60405180806020018881526020018761ffff1661ffff1681526020018663ffffffff1663ffffffff1681526020018561ffff1661ffff1681526020018461ffff1661ffff1681526020018361ffff1661ffff168152602001828103825289818151815260200191508051906020019080838360005b83811015610123578082015181840152602081019050610108565b50505050905090810190601f1680156101505780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b61021d6004803603602081101561017a57600080fd5b810190808035906020019064010000000081111561019757600080fd5b8201836020820111156101a957600080fd5b803590602001918460018302840111640100000000831117156101cb57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610482565b005b61022761053c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102956004803603602081101561027f57600080fd5b8101908080359060200190929190505050610561565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61030d600480360360408110156102ed57600080fd5b810190808035906020019092919080359060200190929190505050610594565b005b6103516004803603602081101561032557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107d9565b005b6004818154811061036057fe5b9060005260206000209060030201600091509050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561040c5780601f106103e15761010080835404028352916020019161040c565b820191906000526020600020905b8154815290600101906020018083116103ef57829003601f168201915b5050505050908060010154908060020160009054906101000a900461ffff16908060020160029054906101000a900463ffffffff16908060020160069054906101000a900461ffff16908060020160089054906101000a900461ffff169080600201600a9054906101000a900461ffff16905087565b6000600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205414610512576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526000815260200160200191505060405180910390fd5b600061051d8261092a565b90506064818161052957fe5b068103905061053882826109b8565b5050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60056020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b813373ffffffffffffffffffffffffffffffffffffffff166005600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461064c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602481526020018061101d6024913960400191505060405180910390fd5b60006004848154811061065b57fe5b9060005260206000209060030201905060006004848154811061067a57fe5b9060005260206000209060030201905060006106966064610cb2565b905060085481116107595782600201600681819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff1602179055505082600201600081819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff1602179055505081600201600881819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff16021790555050610754868360010154610d41565b6107d1565b82600201600881819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff1602179055505081600201600681819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff160217905550506107d083610ee8565b5b505050505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461083257600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561086c57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600080826040516020018082805190602001908083835b602083106109645780518252602082019150602081019050602083039250610941565b6001836020036101000a0380198251168184511680821785525050505050509050019150506040516020818303038152906040528051906020012060001c905060025481816109af57fe5b06915050919050565b6000600160046040518060e00160405280868152602001858152602001600061ffff168152602001600354420163ffffffff168152602001600061ffff168152602001600061ffff168152602001600061ffff16815250908060018154018082558091505090600182039060005260206000209060030201600090919290919091506000820151816000019080519060200190610a56929190610f55565b506020820151816001015560408201518160020160006101000a81548161ffff021916908361ffff16021790555060608201518160020160026101000a81548163ffffffff021916908363ffffffff16021790555060808201518160020160066101000a81548161ffff021916908361ffff16021790555060a08201518160020160086101000a81548161ffff021916908361ffff16021790555060c082015181600201600a6101000a81548161ffff021916908361ffff1602179055505050039050336005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610bbe6001600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610f1290919063ffffffff16565b600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507fe0219661cea55309eeb7eed6a319955a1c1073b2aec26cba8acffadf12b9a6658184846040518084815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b83811015610c71578082015181840152602081019050610c56565b50505050905090810190601f168015610c9e5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a1505050565b6000600760008154809291906001019190505550814233600754604051602001808481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1660601b815260140182815260200193505050506040516020818303038152906040528051906020012060001c81610d3957fe5b069050919050565b813373ffffffffffffffffffffffffffffffffffffffff166005600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614610df9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602481526020018061101d6024913960400191505060405180910390fd5b600060048481548110610e0857fe5b90600052602060002090600302019050610e2181610f2e565b610e76576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610ffb6022913960400191505060405180910390fd5b6002548381610e8157fe5b069250600060028483600101540181610e9657fe5b049050610ed86040518060400160405280600b81526020017f4e6f4e616d65506c616e65000000000000000000000000000000000000000000815250826109b8565b610ee182610ee8565b5050505050565b60035442018160020160026101000a81548163ffffffff021916908363ffffffff16021790555050565b600080828401905083811015610f2457fe5b8091505092915050565b6000428260020160029054906101000a900463ffffffff1663ffffffff1611159050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610f9657805160ff1916838001178555610fc4565b82800160010185558215610fc4579182015b82811115610fc3578251825591602001919060010190610fa8565b5b509050610fd19190610fd5565b5090565b610ff791905b80821115610ff3576000816000905550600101610fdb565b5090565b9056fe566f747265206176696f6e206e276573742070617320656e636f7265207072c3aa744365747465206176696f6e206e6520766f75732061707061727469656e74207061732021a265627a7a723158209e4a6d15a61b290f6bf8cf928c5a08fbdefb9e799d8d6977e51dfe1894e4d83a64736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80634fbfd07f146100675780637c98309a146101645780638da5cb5b1461021f5780639f4583d214610269578063e1fa7638146102d7578063f2fde38b1461030f575b600080fd5b6100936004803603602081101561007d57600080fd5b8101908080359060200190929190505050610353565b60405180806020018881526020018761ffff1661ffff1681526020018663ffffffff1663ffffffff1681526020018561ffff1661ffff1681526020018461ffff1661ffff1681526020018361ffff1661ffff168152602001828103825289818151815260200191508051906020019080838360005b83811015610123578082015181840152602081019050610108565b50505050905090810190601f1680156101505780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b61021d6004803603602081101561017a57600080fd5b810190808035906020019064010000000081111561019757600080fd5b8201836020820111156101a957600080fd5b803590602001918460018302840111640100000000831117156101cb57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610482565b005b61022761053c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102956004803603602081101561027f57600080fd5b8101908080359060200190929190505050610561565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61030d600480360360408110156102ed57600080fd5b810190808035906020019092919080359060200190929190505050610594565b005b6103516004803603602081101561032557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107d9565b005b6004818154811061036057fe5b9060005260206000209060030201600091509050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561040c5780601f106103e15761010080835404028352916020019161040c565b820191906000526020600020905b8154815290600101906020018083116103ef57829003601f168201915b5050505050908060010154908060020160009054906101000a900461ffff16908060020160029054906101000a900463ffffffff16908060020160069054906101000a900461ffff16908060020160089054906101000a900461ffff169080600201600a9054906101000a900461ffff16905087565b6000600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205414610512576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526000815260200160200191505060405180910390fd5b600061051d8261092a565b90506064818161052957fe5b068103905061053882826109b8565b5050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60056020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b813373ffffffffffffffffffffffffffffffffffffffff166005600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461064c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602481526020018061101d6024913960400191505060405180910390fd5b60006004848154811061065b57fe5b9060005260206000209060030201905060006004848154811061067a57fe5b9060005260206000209060030201905060006106966064610cb2565b905060085481116107595782600201600681819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff1602179055505082600201600081819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff1602179055505081600201600881819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff16021790555050610754868360010154610d41565b6107d1565b82600201600881819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff1602179055505081600201600681819054906101000a900461ffff168092919060010191906101000a81548161ffff021916908361ffff160217905550506107d083610ee8565b5b505050505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461083257600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561086c57600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600080826040516020018082805190602001908083835b602083106109645780518252602082019150602081019050602083039250610941565b6001836020036101000a0380198251168184511680821785525050505050509050019150506040516020818303038152906040528051906020012060001c905060025481816109af57fe5b06915050919050565b6000600160046040518060e00160405280868152602001858152602001600061ffff168152602001600354420163ffffffff168152602001600061ffff168152602001600061ffff168152602001600061ffff16815250908060018154018082558091505090600182039060005260206000209060030201600090919290919091506000820151816000019080519060200190610a56929190610f55565b506020820151816001015560408201518160020160006101000a81548161ffff021916908361ffff16021790555060608201518160020160026101000a81548163ffffffff021916908363ffffffff16021790555060808201518160020160066101000a81548161ffff021916908361ffff16021790555060a08201518160020160086101000a81548161ffff021916908361ffff16021790555060c082015181600201600a6101000a81548161ffff021916908361ffff1602179055505050039050336005600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610bbe6001600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610f1290919063ffffffff16565b600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507fe0219661cea55309eeb7eed6a319955a1c1073b2aec26cba8acffadf12b9a6658184846040518084815260200180602001838152602001828103825284818151815260200191508051906020019080838360005b83811015610c71578082015181840152602081019050610c56565b50505050905090810190601f168015610c9e5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a1505050565b6000600760008154809291906001019190505550814233600754604051602001808481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1660601b815260140182815260200193505050506040516020818303038152906040528051906020012060001c81610d3957fe5b069050919050565b813373ffffffffffffffffffffffffffffffffffffffff166005600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614610df9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602481526020018061101d6024913960400191505060405180910390fd5b600060048481548110610e0857fe5b90600052602060002090600302019050610e2181610f2e565b610e76576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610ffb6022913960400191505060405180910390fd5b6002548381610e8157fe5b069250600060028483600101540181610e9657fe5b049050610ed86040518060400160405280600b81526020017f4e6f4e616d65506c616e65000000000000000000000000000000000000000000815250826109b8565b610ee182610ee8565b5050505050565b60035442018160020160026101000a81548163ffffffff021916908363ffffffff16021790555050565b600080828401905083811015610f2457fe5b8091505092915050565b6000428260020160029054906101000a900463ffffffff1663ffffffff1611159050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610f9657805160ff1916838001178555610fc4565b82800160010185558215610fc4579182015b82811115610fc3578251825591602001919060010190610fa8565b5b509050610fd19190610fd5565b5090565b610ff791905b80821115610ff3576000816000905550600101610fdb565b5090565b9056fe566f747265206176696f6e206e276573742070617320656e636f7265207072c3aa744365747465206176696f6e206e6520766f75732061707061727469656e74207061732021a265627a7a723158209e4a6d15a61b290f6bf8cf928c5a08fbdefb9e799d8d6977e51dfe1894e4d83a64736f6c634300050c0032",
+  "sourceMap": "82:793:4:-;;;253:2:5;234:21;;285:11;;279:2;:17;259:37;;320:6;300:26;;153:1:4;136:18;;192:2;160:34;;525:10:3;517:5;;:18;;;;;;;;;;;;;;;;;;82:793:4;;;;;;",
+  "deployedSourceMap": "82:793:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:793:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;544:21:5;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;544:21:5;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;544:21:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1157:242;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1157:242:5;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;1157:242:5;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1157:242:5;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1157:242:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;1157:242:5;;;;;;;;;;;;;;;:::i;:::-;;261:20:3;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;570:45:5;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;570:45:5;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;363:510:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;363:510:4;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;850:174:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;850:174:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;544:21:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1157:242::-;1257:1;1226:15;:27;1242:10;1226:27;;;;;;;;;;;;;;;;:32;1218:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1269:14;1286:27;1307:5;1286:20;:27::i;:::-;1269:44;;1355:3;1343:9;:15;;;;;;1331:9;:27;1319:39;;1364:30;1377:5;1384:9;1364:12;:30::i;:::-;1157:242;;:::o;261:20:3:-;;;;;;;;;;;;;:::o;570:45:5:-;;;;;;;;;;;;;;;;;;;;;;:::o;363:510:4:-;431:8;1478:10:5;1452:36;;:12;:22;1465:8;1452:22;;;;;;;;;;;;;;;;;;;;;:36;;;1444:84;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;447:21:4;471:6;478:8;471:16;;;;;;;;;;;;;;;;;;447:40;;493:24;520:6;527:9;520:17;;;;;;;;;;;;;;;;;;493:44;;543:9;555:12;563:3;555:7;:12::i;:::-;543:24;;585;;577:4;:32;573:296;;619:7;:21;;;:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;650:7;:13;;;:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;673:10;:25;;;:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;708:42;723:8;733:10;:16;;;708:14;:42::i;:::-;573:296;;;771:7;:22;;;:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;803:10;:24;;;:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;837:25;854:7;837:16;:25::i;:::-;573:296;1534:1:5;;;363:510:4;;;:::o;850:174:3:-;670:5;;;;;;;;;;;656:19;;:10;:19;;;648:28;;;;;;946:1;926:22;;:8;:22;;;;918:31;;;;;;988:8;960:37;;981:5;;;;;;;;;;;960:37;;;;;;;;;;;;1011:8;1003:5;;:16;;;;;;;;;;;;;;;;;;850:174;:::o;981:172:5:-;1053:4;1065:9;1109:4;1092:22;;;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1092:22:5;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;1092:22:5;;;1082:33;;;;;;1077:39;;1065:51;;1136:12;;1129:4;:19;;;;;;1122:26;;;981:172;;;:::o;665:312::-;736:7;828:1;746:6;758:66;;;;;;;;764:5;758:66;;;;771:6;758:66;;;;778:1;758:66;;;;;;804:12;;787:15;:29;758:66;;;;;;818:1;758:66;;;;;;820:1;758:66;;;;;;822:1;758:66;;;;;746:79;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;746:79:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:83;736:93;;854:10;835:12;:16;848:2;835:16;;;;;;;;;;;;:29;;;;;;;;;;;;;;;;;;900:34;932:1;900:15;:27;916:10;900:27;;;;;;;;;;;;;;;;:31;;:34;;;;:::i;:::-;870:15;:27;886:10;870:27;;;;;;;;;;;;;;;:64;;;;945:27;954:2;958:5;965:6;945:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;945:27:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;665:312;;;:::o;199:160:4:-;248:4;260:9;;:11;;;;;;;;;;;;;346:8;316:3;320:10;331:9;;299:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;299:42:4;;;289:53;;;;;;284:59;;:70;;;;;;277:77;;199:160;;;:::o;377:413:6:-;456:8;1478:10:5;1452:36;;:12;:22;1465:8;1452:22;;;;;;;;;;;;;;;;;;;;;:36;;;1444:84;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;476:21:6;500:6;507:8;500:16;;;;;;;;;;;;;;;;;;476:40;;534:17;543:7;534:8;:17::i;:::-;526:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;629:12;;614;:27;;;;;;599:42;;651:13;700:1;684:12;668:7;:13;;;:28;667:34;;;;;;651:50;;711:37;;;;;;;;;;;;;;;;;;739:8;711:12;:37::i;:::-;758:25;775:7;758:16;:25::i;:::-;1534:1:5;;377:413:6;;;:::o;98:135::-;213:12;;195:15;:30;165:6;:20;;;:61;;;;;;;;;;;;;;;;;;98:135;:::o;1006:129:9:-;1064:7;1079:9;1095:1;1091;:5;1079:17;;1114:1;1109;:6;;1102:14;;;;1129:1;1122:8;;;1006:129;;;;:::o;239:132:6:-;302:4;348:15;324:6;:20;;;;;;;;;;;;:39;;;;316:48;;239:132;;;:::o;82:793:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.11;\n\nimport \"./planefactory.sol\";\nimport \"./planefuel.sol\";\n\ncontract PlaneAttack is PlaneFactory, PlaneFuel{\n\n    uint randNonce = 0;\n    uint attackVictoryProbability = 60;\n\n  function randMod(uint _modulus) internal returns(uint) {\n    randNonce++;\n    return uint(keccak256(abi.encodePacked(now,msg.sender,randNonce))) % _modulus;\n  }\n\n  function attack(uint _planeId, uint _targetId) external ownerOnlyOf(_planeId) {\n    Plane storage myPlane = planes[_planeId];\n    Plane storage enemyPlane = planes[_targetId];\n    uint rand = randMod(100);\n    if (rand <= attackVictoryProbability) {\n      myPlane.fightwinCount++;\n      myPlane.level++;\n      enemyPlane.fightlossCount++;\n      repairAndBuild(_planeId, enemyPlane.model);\n    } else {\n      myPlane.fightlossCount++;\n      enemyPlane.fightwinCount++;\n      _triggerCooldown(myPlane);\n    }\n  }\n}\n",
+  "sourcePath": "/Users/bloumy/Desktop/Defi721/contracts/planeattack.sol",
+  "ast": {
+    "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/planeattack.sol",
+    "exportedSymbols": {
+      "PlaneAttack": [
+        302
+      ]
+    },
+    "id": 303,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 194,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/planefactory.sol",
+        "file": "./planefactory.sol",
+        "id": 195,
+        "nodeType": "ImportDirective",
+        "scope": 303,
+        "sourceUnit": 491,
+        "src": "26:28:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/planefuel.sol",
+        "file": "./planefuel.sol",
+        "id": 196,
+        "nodeType": "ImportDirective",
+        "scope": 303,
+        "sourceUnit": 578,
+        "src": "55:25:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 197,
+              "name": "PlaneFactory",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 490,
+              "src": "106:12:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PlaneFactory_$490",
+                "typeString": "contract PlaneFactory"
+              }
+            },
+            "id": 198,
+            "nodeType": "InheritanceSpecifier",
+            "src": "106:12:4"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 199,
+              "name": "PlaneFuel",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 577,
+              "src": "120:9:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PlaneFuel_$577",
+                "typeString": "contract PlaneFuel"
+              }
+            },
+            "id": 200,
+            "nodeType": "InheritanceSpecifier",
+            "src": "120:9:4"
+          }
+        ],
+        "contractDependencies": [
+          192,
+          490,
+          577
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 302,
+        "linearizedBaseContracts": [
+          302,
+          577,
+          490,
+          192
+        ],
+        "name": "PlaneAttack",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 203,
+            "name": "randNonce",
+            "nodeType": "VariableDeclaration",
+            "scope": 302,
+            "src": "136:18:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 201,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "136:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 202,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "153:1:4",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 206,
+            "name": "attackVictoryProbability",
+            "nodeType": "VariableDeclaration",
+            "scope": 302,
+            "src": "160:34:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 204,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "160:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3630",
+              "id": 205,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "192:2:4",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_60_by_1",
+                "typeString": "int_const 60"
+              },
+              "value": "60"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 230,
+              "nodeType": "Block",
+              "src": "254:105:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 214,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "260:11:4",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 213,
+                      "name": "randNonce",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 203,
+                      "src": "260:9:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 215,
+                  "nodeType": "ExpressionStatement",
+                  "src": "260:11:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 228,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "id": 220,
+                                  "name": "now",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1130,
+                                  "src": "316:3:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 221,
+                                    "name": "msg",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 1128,
+                                    "src": "320:3:4",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_magic_message",
+                                      "typeString": "msg"
+                                    }
+                                  },
+                                  "id": 222,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberName": "sender",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "320:10:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_address_payable",
+                                    "typeString": "address payable"
+                                  }
+                                },
+                                {
+                                  "argumentTypes": null,
+                                  "id": 223,
+                                  "name": "randNonce",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 203,
+                                  "src": "331:9:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  {
+                                    "typeIdentifier": "t_address_payable",
+                                    "typeString": "address payable"
+                                  },
+                                  {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 218,
+                                  "name": "abi",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1115,
+                                  "src": "299:3:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_abi",
+                                    "typeString": "abi"
+                                  }
+                                },
+                                "id": 219,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "memberName": "encodePacked",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": null,
+                                "src": "299:16:4",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                                  "typeString": "function () pure returns (bytes memory)"
+                                }
+                              },
+                              "id": 224,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "299:42:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            ],
+                            "id": 217,
+                            "name": "keccak256",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1122,
+                            "src": "289:9:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                              "typeString": "function (bytes memory) pure returns (bytes32)"
+                            }
+                          },
+                          "id": 225,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "289:53:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "id": 216,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "284:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        },
+                        "typeName": "uint"
+                      },
+                      "id": 226,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "284:59:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "%",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 227,
+                      "name": "_modulus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 208,
+                      "src": "346:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "284:70:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 212,
+                  "id": 229,
+                  "nodeType": "Return",
+                  "src": "277:77:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 231,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "randMod",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 208,
+                  "name": "_modulus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 231,
+                  "src": "216:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 207,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "216:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "215:15:4"
+            },
+            "returnParameters": {
+              "id": 212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 211,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 231,
+                  "src": "248:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 210,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "248:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "247:6:4"
+            },
+            "scope": 302,
+            "src": "199:160:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 300,
+              "nodeType": "Block",
+              "src": "441:432:4",
+              "statements": [
+                {
+                  "assignments": [
+                    242
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 242,
+                      "name": "myPlane",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 300,
+                      "src": "447:21:4",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                        "typeString": "struct PlaneFactory.Plane"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 241,
+                        "name": "Plane",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 348,
+                        "src": "447:5:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                          "typeString": "struct PlaneFactory.Plane"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 246,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 243,
+                      "name": "planes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 351,
+                      "src": "471:6:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Plane_$348_storage_$dyn_storage",
+                        "typeString": "struct PlaneFactory.Plane storage ref[] storage ref"
+                      }
+                    },
+                    "id": 245,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 244,
+                      "name": "_planeId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 233,
+                      "src": "478:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "471:16:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Plane_$348_storage",
+                      "typeString": "struct PlaneFactory.Plane storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "447:40:4"
+                },
+                {
+                  "assignments": [
+                    248
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 248,
+                      "name": "enemyPlane",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 300,
+                      "src": "493:24:4",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                        "typeString": "struct PlaneFactory.Plane"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 247,
+                        "name": "Plane",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 348,
+                        "src": "493:5:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                          "typeString": "struct PlaneFactory.Plane"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 252,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 249,
+                      "name": "planes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 351,
+                      "src": "520:6:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Plane_$348_storage_$dyn_storage",
+                        "typeString": "struct PlaneFactory.Plane storage ref[] storage ref"
+                      }
+                    },
+                    "id": 251,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 250,
+                      "name": "_targetId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 235,
+                      "src": "527:9:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "520:17:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Plane_$348_storage",
+                      "typeString": "struct PlaneFactory.Plane storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "493:44:4"
+                },
+                {
+                  "assignments": [
+                    254
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 254,
+                      "name": "rand",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 300,
+                      "src": "543:9:4",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 253,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "543:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 258,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "313030",
+                        "id": 256,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "563:3:4",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_100_by_1",
+                          "typeString": "int_const 100"
+                        },
+                        "value": "100"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_100_by_1",
+                          "typeString": "int_const 100"
+                        }
+                      ],
+                      "id": 255,
+                      "name": "randMod",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 231,
+                      "src": "555:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) returns (uint256)"
+                      }
+                    },
+                    "id": 257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "555:12:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "543:24:4"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 261,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 259,
+                      "name": "rand",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 254,
+                      "src": "577:4:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 260,
+                      "name": "attackVictoryProbability",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 206,
+                      "src": "585:24:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "577:32:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 298,
+                    "nodeType": "Block",
+                    "src": "763:106:4",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 287,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "771:24:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 284,
+                              "name": "myPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 242,
+                              "src": "771:7:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 286,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "fightlossCount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 345,
+                            "src": "771:22:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 288,
+                        "nodeType": "ExpressionStatement",
+                        "src": "771:24:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 292,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "803:26:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 289,
+                              "name": "enemyPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 248,
+                              "src": "803:10:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 291,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "fightwinCount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 343,
+                            "src": "803:24:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 293,
+                        "nodeType": "ExpressionStatement",
+                        "src": "803:26:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 295,
+                              "name": "myPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 242,
+                              "src": "854:7:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            ],
+                            "id": 294,
+                            "name": "_triggerCooldown",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 512,
+                            "src": "837:16:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Plane_$348_storage_ptr_$returns$__$",
+                              "typeString": "function (struct PlaneFactory.Plane storage pointer)"
+                            }
+                          },
+                          "id": 296,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "837:25:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 297,
+                        "nodeType": "ExpressionStatement",
+                        "src": "837:25:4"
+                      }
+                    ]
+                  },
+                  "id": 299,
+                  "nodeType": "IfStatement",
+                  "src": "573:296:4",
+                  "trueBody": {
+                    "id": 283,
+                    "nodeType": "Block",
+                    "src": "611:146:4",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 265,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "619:23:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 262,
+                              "name": "myPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 242,
+                              "src": "619:7:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 264,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "fightwinCount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 343,
+                            "src": "619:21:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 266,
+                        "nodeType": "ExpressionStatement",
+                        "src": "619:23:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 270,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "650:15:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 267,
+                              "name": "myPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 242,
+                              "src": "650:7:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 269,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "level",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 339,
+                            "src": "650:13:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 271,
+                        "nodeType": "ExpressionStatement",
+                        "src": "650:15:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 275,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "673:27:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 272,
+                              "name": "enemyPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 248,
+                              "src": "673:10:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 274,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "fightlossCount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 345,
+                            "src": "673:25:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 276,
+                        "nodeType": "ExpressionStatement",
+                        "src": "673:27:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 278,
+                              "name": "_planeId",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 233,
+                              "src": "723:8:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 279,
+                                "name": "enemyPlane",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 248,
+                                "src": "733:10:4",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                  "typeString": "struct PlaneFactory.Plane storage pointer"
+                                }
+                              },
+                              "id": 280,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "model",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 337,
+                              "src": "733:16:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 277,
+                            "name": "repairAndBuild",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 576,
+                            "src": "708:14:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
+                              "typeString": "function (uint256,uint256)"
+                            }
+                          },
+                          "id": 281,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "708:42:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 282,
+                        "nodeType": "ExpressionStatement",
+                        "src": "708:42:4"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 301,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 238,
+                    "name": "_planeId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 233,
+                    "src": "431:8:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 239,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 237,
+                  "name": "ownerOnlyOf",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 489,
+                  "src": "419:11:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_uint256_$",
+                    "typeString": "modifier (uint256)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "419:21:4"
+              }
+            ],
+            "name": "attack",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 236,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 233,
+                  "name": "_planeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 301,
+                  "src": "379:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 232,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "379:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 235,
+                  "name": "_targetId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 301,
+                  "src": "394:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 234,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "394:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "378:31:4"
+            },
+            "returnParameters": {
+              "id": 240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "441:0:4"
+            },
+            "scope": 302,
+            "src": "363:510:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 303,
+        "src": "82:793:4"
+      }
+    ],
+    "src": "0:876:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/planeattack.sol",
+    "exportedSymbols": {
+      "PlaneAttack": [
+        302
+      ]
+    },
+    "id": 303,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 194,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/planefactory.sol",
+        "file": "./planefactory.sol",
+        "id": 195,
+        "nodeType": "ImportDirective",
+        "scope": 303,
+        "sourceUnit": 491,
+        "src": "26:28:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/planefuel.sol",
+        "file": "./planefuel.sol",
+        "id": 196,
+        "nodeType": "ImportDirective",
+        "scope": 303,
+        "sourceUnit": 578,
+        "src": "55:25:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 197,
+              "name": "PlaneFactory",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 490,
+              "src": "106:12:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PlaneFactory_$490",
+                "typeString": "contract PlaneFactory"
+              }
+            },
+            "id": 198,
+            "nodeType": "InheritanceSpecifier",
+            "src": "106:12:4"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 199,
+              "name": "PlaneFuel",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 577,
+              "src": "120:9:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PlaneFuel_$577",
+                "typeString": "contract PlaneFuel"
+              }
+            },
+            "id": 200,
+            "nodeType": "InheritanceSpecifier",
+            "src": "120:9:4"
+          }
+        ],
+        "contractDependencies": [
+          192,
+          490,
+          577
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 302,
+        "linearizedBaseContracts": [
+          302,
+          577,
+          490,
+          192
+        ],
+        "name": "PlaneAttack",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 203,
+            "name": "randNonce",
+            "nodeType": "VariableDeclaration",
+            "scope": 302,
+            "src": "136:18:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 201,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "136:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 202,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "153:1:4",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 206,
+            "name": "attackVictoryProbability",
+            "nodeType": "VariableDeclaration",
+            "scope": 302,
+            "src": "160:34:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 204,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "160:4:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3630",
+              "id": 205,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "192:2:4",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_60_by_1",
+                "typeString": "int_const 60"
+              },
+              "value": "60"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 230,
+              "nodeType": "Block",
+              "src": "254:105:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 214,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "260:11:4",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 213,
+                      "name": "randNonce",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 203,
+                      "src": "260:9:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 215,
+                  "nodeType": "ExpressionStatement",
+                  "src": "260:11:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 228,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "id": 220,
+                                  "name": "now",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1130,
+                                  "src": "316:3:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 221,
+                                    "name": "msg",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 1128,
+                                    "src": "320:3:4",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_magic_message",
+                                      "typeString": "msg"
+                                    }
+                                  },
+                                  "id": 222,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberName": "sender",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "320:10:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_address_payable",
+                                    "typeString": "address payable"
+                                  }
+                                },
+                                {
+                                  "argumentTypes": null,
+                                  "id": 223,
+                                  "name": "randNonce",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 203,
+                                  "src": "331:9:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  {
+                                    "typeIdentifier": "t_address_payable",
+                                    "typeString": "address payable"
+                                  },
+                                  {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": null,
+                                  "id": 218,
+                                  "name": "abi",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 1115,
+                                  "src": "299:3:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_magic_abi",
+                                    "typeString": "abi"
+                                  }
+                                },
+                                "id": 219,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "memberName": "encodePacked",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": null,
+                                "src": "299:16:4",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                                  "typeString": "function () pure returns (bytes memory)"
+                                }
+                              },
+                              "id": 224,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "299:42:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            ],
+                            "id": 217,
+                            "name": "keccak256",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1122,
+                            "src": "289:9:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                              "typeString": "function (bytes memory) pure returns (bytes32)"
+                            }
+                          },
+                          "id": 225,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "289:53:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "id": 216,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "284:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        },
+                        "typeName": "uint"
+                      },
+                      "id": 226,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "284:59:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "%",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 227,
+                      "name": "_modulus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 208,
+                      "src": "346:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "284:70:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 212,
+                  "id": 229,
+                  "nodeType": "Return",
+                  "src": "277:77:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 231,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "randMod",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 208,
+                  "name": "_modulus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 231,
+                  "src": "216:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 207,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "216:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "215:15:4"
+            },
+            "returnParameters": {
+              "id": 212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 211,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 231,
+                  "src": "248:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 210,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "248:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "247:6:4"
+            },
+            "scope": 302,
+            "src": "199:160:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 300,
+              "nodeType": "Block",
+              "src": "441:432:4",
+              "statements": [
+                {
+                  "assignments": [
+                    242
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 242,
+                      "name": "myPlane",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 300,
+                      "src": "447:21:4",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                        "typeString": "struct PlaneFactory.Plane"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 241,
+                        "name": "Plane",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 348,
+                        "src": "447:5:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                          "typeString": "struct PlaneFactory.Plane"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 246,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 243,
+                      "name": "planes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 351,
+                      "src": "471:6:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Plane_$348_storage_$dyn_storage",
+                        "typeString": "struct PlaneFactory.Plane storage ref[] storage ref"
+                      }
+                    },
+                    "id": 245,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 244,
+                      "name": "_planeId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 233,
+                      "src": "478:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "471:16:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Plane_$348_storage",
+                      "typeString": "struct PlaneFactory.Plane storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "447:40:4"
+                },
+                {
+                  "assignments": [
+                    248
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 248,
+                      "name": "enemyPlane",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 300,
+                      "src": "493:24:4",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                        "typeString": "struct PlaneFactory.Plane"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 247,
+                        "name": "Plane",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 348,
+                        "src": "493:5:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                          "typeString": "struct PlaneFactory.Plane"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 252,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 249,
+                      "name": "planes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 351,
+                      "src": "520:6:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Plane_$348_storage_$dyn_storage",
+                        "typeString": "struct PlaneFactory.Plane storage ref[] storage ref"
+                      }
+                    },
+                    "id": 251,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 250,
+                      "name": "_targetId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 235,
+                      "src": "527:9:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "520:17:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Plane_$348_storage",
+                      "typeString": "struct PlaneFactory.Plane storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "493:44:4"
+                },
+                {
+                  "assignments": [
+                    254
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 254,
+                      "name": "rand",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 300,
+                      "src": "543:9:4",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 253,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "543:4:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 258,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "313030",
+                        "id": 256,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "563:3:4",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_100_by_1",
+                          "typeString": "int_const 100"
+                        },
+                        "value": "100"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_100_by_1",
+                          "typeString": "int_const 100"
+                        }
+                      ],
+                      "id": 255,
+                      "name": "randMod",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 231,
+                      "src": "555:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) returns (uint256)"
+                      }
+                    },
+                    "id": 257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "555:12:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "543:24:4"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 261,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 259,
+                      "name": "rand",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 254,
+                      "src": "577:4:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 260,
+                      "name": "attackVictoryProbability",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 206,
+                      "src": "585:24:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "577:32:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 298,
+                    "nodeType": "Block",
+                    "src": "763:106:4",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 287,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "771:24:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 284,
+                              "name": "myPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 242,
+                              "src": "771:7:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 286,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "fightlossCount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 345,
+                            "src": "771:22:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 288,
+                        "nodeType": "ExpressionStatement",
+                        "src": "771:24:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 292,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "803:26:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 289,
+                              "name": "enemyPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 248,
+                              "src": "803:10:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 291,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "fightwinCount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 343,
+                            "src": "803:24:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 293,
+                        "nodeType": "ExpressionStatement",
+                        "src": "803:26:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 295,
+                              "name": "myPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 242,
+                              "src": "854:7:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            ],
+                            "id": 294,
+                            "name": "_triggerCooldown",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 512,
+                            "src": "837:16:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Plane_$348_storage_ptr_$returns$__$",
+                              "typeString": "function (struct PlaneFactory.Plane storage pointer)"
+                            }
+                          },
+                          "id": 296,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "837:25:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 297,
+                        "nodeType": "ExpressionStatement",
+                        "src": "837:25:4"
+                      }
+                    ]
+                  },
+                  "id": 299,
+                  "nodeType": "IfStatement",
+                  "src": "573:296:4",
+                  "trueBody": {
+                    "id": 283,
+                    "nodeType": "Block",
+                    "src": "611:146:4",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 265,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "619:23:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 262,
+                              "name": "myPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 242,
+                              "src": "619:7:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 264,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "fightwinCount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 343,
+                            "src": "619:21:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 266,
+                        "nodeType": "ExpressionStatement",
+                        "src": "619:23:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 270,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "650:15:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 267,
+                              "name": "myPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 242,
+                              "src": "650:7:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 269,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "level",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 339,
+                            "src": "650:13:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 271,
+                        "nodeType": "ExpressionStatement",
+                        "src": "650:15:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 275,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "UnaryOperation",
+                          "operator": "++",
+                          "prefix": false,
+                          "src": "673:27:4",
+                          "subExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 272,
+                              "name": "enemyPlane",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 248,
+                              "src": "673:10:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                "typeString": "struct PlaneFactory.Plane storage pointer"
+                              }
+                            },
+                            "id": 274,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "fightlossCount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 345,
+                            "src": "673:25:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint16",
+                              "typeString": "uint16"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint16",
+                            "typeString": "uint16"
+                          }
+                        },
+                        "id": 276,
+                        "nodeType": "ExpressionStatement",
+                        "src": "673:27:4"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 278,
+                              "name": "_planeId",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 233,
+                              "src": "723:8:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 279,
+                                "name": "enemyPlane",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 248,
+                                "src": "733:10:4",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_Plane_$348_storage_ptr",
+                                  "typeString": "struct PlaneFactory.Plane storage pointer"
+                                }
+                              },
+                              "id": 280,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "model",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 337,
+                              "src": "733:16:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 277,
+                            "name": "repairAndBuild",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 576,
+                            "src": "708:14:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
+                              "typeString": "function (uint256,uint256)"
+                            }
+                          },
+                          "id": 281,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "708:42:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 282,
+                        "nodeType": "ExpressionStatement",
+                        "src": "708:42:4"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 301,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 238,
+                    "name": "_planeId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 233,
+                    "src": "431:8:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 239,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 237,
+                  "name": "ownerOnlyOf",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 489,
+                  "src": "419:11:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_uint256_$",
+                    "typeString": "modifier (uint256)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "419:21:4"
+              }
+            ],
+            "name": "attack",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 236,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 233,
+                  "name": "_planeId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 301,
+                  "src": "379:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 232,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "379:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 235,
+                  "name": "_targetId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 301,
+                  "src": "394:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 234,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "394:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "378:31:4"
+            },
+            "returnParameters": {
+              "id": 240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "441:0:4"
+            },
+            "scope": 302,
+            "src": "363:510:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 303,
+        "src": "82:793:4"
+      }
+    ],
+    "src": "0:876:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2019-12-13T20:30:58.618Z",
+  "devdoc": {
+    "methods": {
+      "transferOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
