@@ -39,17 +39,6 @@ npm install
 npx truffle test --network ganache
 ```
 
-### Détails des tests
-
-L'application se compose de deux smarts contracts developpés en Solidity, Poemes.sol et AchatVente.sol .  
-Toutes les fonctionnalités des deux smarts contracts sont testées.
-
-Les fonctions disponibles dans le contrat Poemes.sol sont celles issues d'un ERC721 classique (totalSuply(), balanceOf(), approve(), etc.).  
-Une fonction permet d'afficher un poeme dans la console.
-
-Les fonctions disponibles dans le contrat AchatVente.sol permettent de mettre en vente et d'acheter un poeme.	
-
-
 ## Deploiement
 
 Les contrats ne sont pas déployés sur le mainnet.
@@ -64,7 +53,7 @@ L'ensemble du code est disponible ici: https://github.com/titadone/Defi721
 
 * **Brahima** - https://github.com/titadone/
 
-* **Tony ** - https://github.com/TonySeperoumal/
+* **Tony** - https://github.com/TonySeperoumal/
 
 ## License
 
