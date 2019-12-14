@@ -11,9 +11,15 @@ contract('ERC721', function(accounts) {
       beforeEach(async function() {
         this.ERC721Instance = await ERC721.new({from: owner});
         
+        
       });
 
       it("propriétaire de zéro avions", async function() {
+        expect(await this.ERC721Instance.balanceOf.call(owner)).to.be.bignumber.equal(new BN('0'));
+      });
+
+      it("propriétaire de 1 avions", async function() {
+
         expect(await this.ERC721Instance.balanceOf.call(owner)).to.be.bignumber.equal(new BN('0'));
       });
 

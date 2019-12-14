@@ -27,7 +27,7 @@ contract PlaneFactory is Ownable {
   Plane[] public planes;
 
   mapping (uint => address) public planeToOwner;
-  mapping (address => uint) ownerPlaneCount;
+  mapping (address => uint) public ownerPlaneCount;
 
   function _createPlane(string memory _name, uint _model) internal {
     uint id = planes.push(Plane(_name, _model,0,uint32(block.timestamp + cooldownTime),0,0,0)) - 1;
@@ -36,8 +36,8 @@ contract PlaneFactory is Ownable {
     emit NewPlane(id, _name, _model);
   }
 
-  function getPlaneCount(address _user) returns (uint count){
-    
+  function getPlaneCount(address _user) public view returns (uint){
+    return ownerPlaneCount[_user];
   }
 
   function _generateRandomModel(string memory _str) private view returns (uint) {
