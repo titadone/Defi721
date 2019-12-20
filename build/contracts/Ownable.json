@@ -57,15 +57,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of \\\"user permissions\\\".\",\"methods\":{\"constructor\":{\"details\":\"The Ownable constructor sets the original `owner` of the contract to the sender account.\"},\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}}},\"title\":\"Ownable\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/bloumy/Desktop/Defi721/contracts/ownable.sol\":\"Ownable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/bloumy/Desktop/Defi721/contracts/context.sol\":{\"keccak256\":\"0xa5ce23dc71caa76caf782712dc8fef8dd2390c277f71e286474e9894d6ece97f\",\"urls\":[\"bzz-raw://cb14fd3bdc804349f070f0a372a2b6819bfe6e1b186080bb4850a1e1d024a16f\",\"dweb:/ipfs/Qmcp5Nhsq3PRRgXQYeqY41FMY1G2YbYC4JCWxFrst24MsC\"]},\"/Users/bloumy/Desktop/Defi721/contracts/ownable.sol\":{\"keccak256\":\"0xf1539c2bcb3996a3945148dcfe07e785e795806da4bd41c354ebd03f6b8524cc\",\"urls\":[\"bzz-raw://ef7bf2b1e1227a1dd110d80b5e50ec5f322c54906c8cafcff45e415d27803e2b\",\"dweb:/ipfs/QmcdhSJohwuHtdqL2YNMbxzj2W2LzAy5NejYnxASucdEEN\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610274806100606000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80638da5cb5b1461003b578063f2fde38b14610085575b600080fd5b6100436100c9565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100c76004803603602081101561009b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506100ee565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461014757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561018157600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea265627a7a72315820b383812caa2d12708810d1c2d8eb7d917cf7b317821a1f830a9bcd812ace10a264736f6c634300050c0032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80638da5cb5b1461003b578063f2fde38b14610085575b600080fd5b6100436100c9565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100c76004803603602081101561009b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506100ee565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461014757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561018157600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea265627a7a72315820b383812caa2d12708810d1c2d8eb7d917cf7b317821a1f830a9bcd812ace10a264736f6c634300050c0032",
-  "sourceMap": "240:787:3:-;;;491:49;8:9:-1;5:2;;;30:1;27;20:12;5:2;491:49:3;525:10;517:5;;:18;;;;;;;;;;;;;;;;;;240:787;;;;;;",
-  "deployedSourceMap": "240:787:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;240:787:3;;;;;;;;;;;;;;;;;;;;;;;;261:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;850:174;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;850:174:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;261:20;;;;;;;;;;;;;:::o;850:174::-;670:5;;;;;;;;;;;656:19;;:10;:19;;;648:28;;;;;;946:1;926:22;;:8;:22;;;;918:31;;;;;;988:8;960:37;;981:5;;;;;;;;;;;960:37;;;;;;;;;;;;1011:8;1003:5;;:16;;;;;;;;;;;;;;;;;;850:174;:::o",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of \\\"user permissions\\\".\",\"methods\":{\"constructor\":{\"details\":\"The Ownable constructor sets the original `owner` of the contract to the sender account.\"},\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}}},\"title\":\"Ownable\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/tonysepe/github/Defi721/contracts/ownable.sol\":\"Ownable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/tonysepe/github/Defi721/contracts/context.sol\":{\"keccak256\":\"0xa5ce23dc71caa76caf782712dc8fef8dd2390c277f71e286474e9894d6ece97f\",\"urls\":[\"bzz-raw://cb14fd3bdc804349f070f0a372a2b6819bfe6e1b186080bb4850a1e1d024a16f\",\"dweb:/ipfs/Qmcp5Nhsq3PRRgXQYeqY41FMY1G2YbYC4JCWxFrst24MsC\"]},\"/home/tonysepe/github/Defi721/contracts/ownable.sol\":{\"keccak256\":\"0xf1539c2bcb3996a3945148dcfe07e785e795806da4bd41c354ebd03f6b8524cc\",\"urls\":[\"bzz-raw://ef7bf2b1e1227a1dd110d80b5e50ec5f322c54906c8cafcff45e415d27803e2b\",\"dweb:/ipfs/QmcdhSJohwuHtdqL2YNMbxzj2W2LzAy5NejYnxASucdEEN\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50600080546001600160a01b03191633179055610150806100326000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80638da5cb5b1461003b578063f2fde38b1461005f575b600080fd5b610043610087565b604080516001600160a01b039092168252519081900360200190f35b6100856004803603602081101561007557600080fd5b50356001600160a01b0316610096565b005b6000546001600160a01b031681565b6000546001600160a01b031633146100ad57600080fd5b6001600160a01b0381166100c057600080fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b039290921691909117905556fea265627a7a723158206d0d99da0461ee80f8fa37e6031f1c173e09e4a27db8f4debc3cc0a91ba2cdb064736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80638da5cb5b1461003b578063f2fde38b1461005f575b600080fd5b610043610087565b604080516001600160a01b039092168252519081900360200190f35b6100856004803603602081101561007557600080fd5b50356001600160a01b0316610096565b005b6000546001600160a01b031681565b6000546001600160a01b031633146100ad57600080fd5b6001600160a01b0381166100c057600080fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b039290921691909117905556fea265627a7a723158206d0d99da0461ee80f8fa37e6031f1c173e09e4a27db8f4debc3cc0a91ba2cdb064736f6c634300050c0032",
+  "sourceMap": "240:787:3:-;;;491:49;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;517:5:3;:18;;-1:-1:-1;;;;;;517:18:3;525:10;517:18;;;240:787;;;;;;",
+  "deployedSourceMap": "240:787:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;240:787:3;;;;;;;;;;;;;;;;;;;;;;;;261:20;;;:::i;:::-;;;;-1:-1:-1;;;;;261:20:3;;;;;;;;;;;;;;850:174;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;850:174:3;-1:-1:-1;;;;;850:174:3;;:::i;:::-;;261:20;;;-1:-1:-1;;;;;261:20:3;;:::o;850:174::-;670:5;;-1:-1:-1;;;;;670:5:3;656:10;:19;648:28;;;;;;-1:-1:-1;;;;;926:22:3;;918:31;;;;;;981:5;;;960:37;;-1:-1:-1;;;;;960:37:3;;;;981:5;;;960:37;;;1003:5;:16;;-1:-1:-1;;;;;;1003:16:3;-1:-1:-1;;;;;1003:16:3;;;;;;;;;;850:174::o",
   "source": "pragma solidity ^0.5.11;\nimport \"./context.sol\";\n\n/**\n * @title Ownable\n * @dev The Ownable contract has an owner address, and provides basic authorization control\n * functions, this simplifies the implementation of \"user permissions\".\n */\ncontract Ownable {\n  address public owner ;\n\n  event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\n\n  /**\n   * @dev The Ownable constructor sets the original `owner` of the contract to the sender\n   * account.\n   */\n  constructor() public{\n    owner = msg.sender;\n  }\n\n\n  /**\n   * @dev Throws if called by any account other than the owner.\n   */\n  modifier onlyOwner() {\n    require(msg.sender == owner);\n    _;\n  }\n\n\n  /**\n   * @dev Allows the current owner to transfer control of the contract to a newOwner.\n   * @param newOwner The address to transfer ownership to.\n   */\n  function transferOwnership(address newOwner) public onlyOwner {\n    require(newOwner != address(0));\n    emit OwnershipTransferred(owner, newOwner);\n    owner = newOwner;\n  }\n\n}\n",
-  "sourcePath": "/Users/bloumy/Desktop/Defi721/contracts/ownable.sol",
+  "sourcePath": "/home/tonysepe/github/Defi721/contracts/ownable.sol",
   "ast": {
-    "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/ownable.sol",
+    "absolutePath": "/home/tonysepe/github/Defi721/contracts/ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         192
@@ -86,7 +86,7 @@
         "src": "0:24:3"
       },
       {
-        "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/context.sol",
+        "absolutePath": "/home/tonysepe/github/Defi721/contracts/context.sol",
         "file": "./context.sol",
         "id": 138,
         "nodeType": "ImportDirective",
@@ -244,7 +244,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1128,
+                        "referencedDeclaration": 1197,
                         "src": "525:3:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -331,7 +331,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1128,
+                            "referencedDeclaration": 1197,
                             "src": "656:3:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -385,10 +385,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1131,
-                        1132
+                        1200,
+                        1201
                       ],
-                      "referencedDeclaration": 1131,
+                      "referencedDeclaration": 1200,
                       "src": "648:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -543,10 +543,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1131,
-                        1132
+                        1200,
+                        1201
                       ],
-                      "referencedDeclaration": 1131,
+                      "referencedDeclaration": 1200,
                       "src": "918:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -771,7 +771,7 @@
     "src": "0:1028:3"
   },
   "legacyAST": {
-    "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/ownable.sol",
+    "absolutePath": "/home/tonysepe/github/Defi721/contracts/ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         192
@@ -792,7 +792,7 @@
         "src": "0:24:3"
       },
       {
-        "absolutePath": "/Users/bloumy/Desktop/Defi721/contracts/context.sol",
+        "absolutePath": "/home/tonysepe/github/Defi721/contracts/context.sol",
         "file": "./context.sol",
         "id": 138,
         "nodeType": "ImportDirective",
@@ -950,7 +950,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1128,
+                        "referencedDeclaration": 1197,
                         "src": "525:3:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1037,7 +1037,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1128,
+                            "referencedDeclaration": 1197,
                             "src": "656:3:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1091,10 +1091,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1131,
-                        1132
+                        1200,
+                        1201
                       ],
-                      "referencedDeclaration": 1131,
+                      "referencedDeclaration": 1200,
                       "src": "648:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1249,10 +1249,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1131,
-                        1132
+                        1200,
+                        1201
                       ],
-                      "referencedDeclaration": 1131,
+                      "referencedDeclaration": 1200,
                       "src": "918:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1482,7 +1482,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.19",
-  "updatedAt": "2019-12-13T20:30:58.617Z",
+  "updatedAt": "2019-12-14T16:42:48.923Z",
   "devdoc": {
     "details": "The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of \"user permissions\".",
     "methods": {

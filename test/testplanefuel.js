@@ -12,6 +12,6 @@ contract(fuel,function(accounts) {
   });
 
   it("réservoir plein", async function() {
-    expect(await this.fuelInstance._isReady().to.equal(bool));
+    expect(await this.fuelInstance._isReady()).to.equal(true);
   });
 })

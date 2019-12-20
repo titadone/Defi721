@@ -1,4 +1,5 @@
 pragma solidity ^0.5.11;
+pragma experimental ABIEncoderV2;
 
 import "./planefactory.sol";
 
@@ -10,7 +11,7 @@ contract PlaneFuel is PlaneFactory {
         _plane.readyTimeFuel = uint32(block.timestamp + cooldownTime);
     }
 
-    function _isReady(Plane storage _plane) internal view returns (bool) {
+    function _isReady(Plane memory _plane) public view returns (bool) {
       return (_plane.readyTimeFuel >= block.timestamp);
     }
 
