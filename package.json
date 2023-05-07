@@ -21,7 +21,7 @@
   "dependencies": {
     "node": "^12.13.0",
     "sha3": "^2.0.7",
-    "truffle": "^5.0.44"
+    "truffle": "^5.8.4"
   },
   "config": {
     "ganache": {
